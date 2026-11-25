@@ -1,5 +1,3 @@
-# Release template: dist/homebrew/render.py fills every @...@ placeholder.
-# Rendered as an artifact only; publishing a tap requires the owner's decision.
 class Squad < Formula
   desc "Terminal chat room for multiple language models through OpenRouter"
   homepage "https://github.com/shoemoney/squad"
