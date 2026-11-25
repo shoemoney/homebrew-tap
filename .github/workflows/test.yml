@@ -11,9 +11,7 @@ jobs:
       - uses: actions/checkout@v4
       - uses: Homebrew/actions/setup-homebrew@main
       - name: Install from the tap
-        run: |
-          brew tap shoemoney/tap "$GITHUB_WORKSPACE"
-          brew install --formula shoemoney/tap/squad
+        run: brew install --formula shoemoney/tap/squad
       - name: Smoke test
         run: |
           squad --version | grep -F "0.1.0"
