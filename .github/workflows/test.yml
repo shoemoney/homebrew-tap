@@ -1,0 +1,21 @@
+name: test
+on: [push, pull_request, workflow_dispatch]
+jobs:
+  install:
+    strategy:
+      fail-fast: false
+      matrix:
+        os: [macos-latest, ubuntu-latest]
+    runs-on: ${{ matrix.os }}
+    steps:
+      - uses: actions/checkout@v4
+      - uses: Homebrew/actions/setup-homebrew@master
+      - name: Install from the tap
+        run: |
+          brew tap shoemoney/tap "$GITHUB_WORKSPACE"
+          brew install --formula shoemoney/tap/squad
+      - name: Smoke test
+        run: |
+          squad --version | grep -F "0.1.0"
+          brew test shoemoney/tap/squad
+          HOME="$(mktemp -d)" squad doctor || test $? -eq 1
