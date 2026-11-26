@@ -3,20 +3,20 @@
 class Squad < Formula
   desc "Terminal chat room for multiple language models through OpenRouter"
   homepage "https://github.com/shoemoney/squad"
-  version "0.1.1"
+  version "0.1.2"
   license "Apache-2.0"
 
   on_macos do
     on_arm do
-      url "https://github.com/shoemoney/squad/releases/download/v0.1.1/squad-cli-aarch64-apple-darwin.tar.xz"
-      sha256 "c1d61165a9aaa3d5b4b2c2c09861ccbdaa76a5e9f6456cc3d092c80dd1fe4038"
+      url "https://github.com/shoemoney/squad/releases/download/v0.1.2/squad-cli-aarch64-apple-darwin.tar.xz"
+      sha256 "fac91dc582abfeb75939465d687482bdb752d518a18c675ff23d9598c2be6f6c"
     end
   end
 
   on_linux do
     on_intel do
-      url "https://github.com/shoemoney/squad/releases/download/v0.1.1/squad-cli-x86_64-unknown-linux-gnu.tar.xz"
-      sha256 "4446abb19c275fc4aa8497c2410f148730d19619f154f6e87826f982bcf5a957"
+      url "https://github.com/shoemoney/squad/releases/download/v0.1.2/squad-cli-x86_64-unknown-linux-gnu.tar.xz"
+      sha256 "aba260f1922e3d5b0fc3f436703cac6f6b0ad5d93ae55447bab6bc1c73613b04"
     end
   end
 
