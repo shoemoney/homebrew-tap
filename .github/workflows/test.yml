@@ -14,6 +14,9 @@ jobs:
         run: brew install --formula shoemoney/tap/squad
       - name: Smoke test
         run: |
-          squad --version | grep -F "0.1.0"
+          VERSION="$(brew ruby -e 'puts Formulary.factory("shoemoney/tap/squad").version')"
+          test -n "$VERSION"
+          echo "formula version: $VERSION"
+          squad --version | grep -F "$VERSION"
           brew test shoemoney/tap/squad
           HOME="$(mktemp -d)" squad doctor || test $? -eq 1
